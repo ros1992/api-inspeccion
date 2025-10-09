@@ -1,0 +1,37 @@
+
+   INFO  Server running on [http://127.0.0.1:8000].  
+
+  Press Ctrl+C to stop the server
+
+  2025-10-09 00:41:36 / .......................................... ~ 500.76ms
+  2025-10-09 00:42:57 /api/auth/register ............................... ~ 1s
+  2025-10-09 00:44:35 /api/auth/register ........................... ~ 0.23ms
+  2025-10-09 00:46:16 / ............................................ ~ 0.32ms
+  2025-10-09 00:50:46 / ........................................... ~ 20.39ms
+
+   INFO  Environment modified. Restarting server...  
+
+   INFO  Server running on [http://127.0.0.1:8000].  
+
+  Press Ctrl+C to stop the server
+
+
+   INFO  Environment modified. Restarting server...  
+
+   INFO  Server running on [http://127.0.0.1:8000].  
+
+  Press Ctrl+C to stop the server
+
+  2025-10-09 01:00:40 /api/auth/register ............................... ~ 1s
+  2025-10-09 01:04:03 / ................................................ ~ 3s
+
+   INFO  Environment modified. Restarting server...  
+
+   INFO  Server running on [http://127.0.0.1:8000].  
+
+  Press Ctrl+C to stop the server
+
+  2025-10-09 01:55:42 / ................................................ ~ 1s
+  2025-10-09 02:00:44 / ................................................ ~ 1s
+  2025-10-09 02:08:58 / ................................................ ~ 1s
+  2025-10-09 02:19:37 / ................................................ ~ 1s
