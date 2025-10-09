@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class categoria extends Model
 {
     // Nombre de la tabla
-    protected $table = 'categoria';
+    protected $table = 'Categorias';
 
     // Campos permitidos
     protected $fillable = [
@@ -15,10 +15,7 @@ class categoria extends Model
         'fecha'
     ];
 
-    // Campos ocultos al convertir a JSON
-    protected $hidden = [
-        'created_at',
-        'updated_at',
-    ];
+    // Le decimos a Laravel que NO gestione las columnas created_at y updated_at
+    public $timestamps = false;
 
 }

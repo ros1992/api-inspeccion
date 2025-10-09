@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\CategoriasController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
@@ -19,6 +18,6 @@ Route::group([
     'middleware' => 'api',
     'prefix' => 'categoria'
 ], function ($router) {
-    Route::post('/', [CategoriasController::class, 'index']);
-    Route::post('crear', [CategoriasController::class, 'store']);
+    Route::get('/', [CategoriasController::class, 'index']);
+    Route::post('/', [CategoriasController::class, 'store']);
 });
