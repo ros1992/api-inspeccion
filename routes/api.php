@@ -17,8 +17,8 @@ Route::group([
 
 Route::group([
     'middleware' => 'api',
-    'prefix' => 'categorias'
+    'prefix' => 'categoria'
 ], function ($router) {
     Route::post('/', [CategoriasController::class, 'index']);
-    Route::post('crear', [CategoriasController::class, 'create']);
+    Route::post('crear', [CategoriasController::class, 'store']);
 });

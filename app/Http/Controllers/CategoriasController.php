@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\categorias;
+use App\Models\categoria;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
@@ -11,10 +11,10 @@ class CategoriasController extends Controller
 {
     public function index()
     {
-        return view('categorias.index');
+        return view('categoria.index');
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         $this->authorize('esAdministrador');
 
@@ -24,7 +24,7 @@ class CategoriasController extends Controller
 
         try {
             // creamos la categoria
-            $categoria = new Categorias();
+            $categoria = new categoria();
             $categoria->nombre = $validated['nombre'];
             $categoria->fecha = Carbon::now(); // fecha actual con hora
 
