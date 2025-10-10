@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class categoria extends Model
 {
     // Nombre de la tabla
-    protected $table = 'Categorias';
+    protected $table = 'categorias';
 
     // Campos permitidos
     protected $fillable = [
