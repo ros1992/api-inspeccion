@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Actividad;
-use App\Models\categoria;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\categoria;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
@@ -15,7 +15,7 @@ class CategoriasController extends Controller
 
         try {
             // obtenemos todas las categorias
-            $categorias = categoria::all();
+            $categorias = Categoria::all();
 
             return response()->json([
                 'categorias' => $categorias
@@ -37,7 +37,7 @@ class CategoriasController extends Controller
 
         try {
             // creamos la categoria
-            $categoria = new categoria();
+            $categoria = new Categoria();
             $categoria->nombre = $validated['nombre'];
             $categoria->fecha = Carbon::now(); // fecha actual con hora
 
@@ -69,7 +69,7 @@ class CategoriasController extends Controller
 
         try {
             // creamos la categoria
-            $categoria = categoria::find($validated['id']);
+            $categoria = Categoria::find($validated['id']);
             $updated = $categoria->update([
                 'nombre' => $validated['nombre'],
             ]);
