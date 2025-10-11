@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('actividades', function (Blueprint $table) {
-            $table->id('id_actividad');
-            $table->string('name');
-            $table->foreignId('id_categoria')->constrained('categorias', 'id_categoria');
+        Schema::create('equipos', function (Blueprint $table) {
+            $table->id('id_equipo');
+            $table->string('tipo_equipo', 50)->default('TRACTOR');
+            $table->string('marca', 50)->nullable();
+            $table->string('modelo', 50)->nullable();
+            $table->string('area_asignada', 100)->nullable();
             $table->timestamp('fecha');
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('actividades');
+        Schema::dropIfExists('equipos');
     }
 };

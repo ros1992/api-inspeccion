@@ -63,7 +63,7 @@ class CategoriasController extends Controller
         $this->authorize('esAdministrador');
 
         $validated = $request->validate([
-            'id' => 'required|integer|exists:categorias,id',
+            'id' => 'required|integer|exists:categorias,id_categoria',
             'nombre' => 'required|string|max:60',
         ]);
 
@@ -77,7 +77,7 @@ class CategoriasController extends Controller
             if ($updated) {
                 return response()->json([
                     'mensaje' => 'Actualizado correctamente'
-                ], Response::HTTP_CREATED);
+                ], Response::HTTP_OK );
             } else {
                 return response()->json([
                     'mensaje' => 'Error al actualizar'

@@ -14,14 +14,14 @@ class ActividadController extends Controller
         $this->authorize('esAdministrador');
 
         try {
-            $actividades = Actividad::select('id', 'name', 'categoria_id', 'fecha')->get();
-            $categorias = Categoria::select('id', 'nombre')->get();
+            $actividades = Actividad::select('id_actividad', 'name', 'id_categoria', 'fecha')->get();
+            $categorias = Categoria::select('id_categoria', 'nombre')->get();
 
             $resultado = $categorias->map(function ($categoria) use ($actividades) {
                 return [
-                    'id' => $categoria->id,
+                    'id' => $categoria->id_categoria,
                     'nombre' => $categoria->nombre,
-                    'actividades' => $actividades->where('categoria_id', $categoria->id)->values(),
+                    'actividades' => $actividades->where('id_categoria', $categoria->id_categoria)->values(),
                 ];
             });
 
@@ -42,13 +42,13 @@ class ActividadController extends Controller
 
         $validated = $request->validate([
             'name' => 'required|string|max:60',
-            'categoria_id' => 'required|integer'
+            'id' => 'required|integer'
         ]);
 
         try {
            $actividad = new Actividad();
            $actividad->name = $validated['name'];
-           $actividad->categoria_id = $validated['categoria_id'];
+           $actividad->id_categoria = $validated['id'];
            $actividad->fecha = Carbon::now();
 
            if ($actividad->save()) {
@@ -73,9 +73,9 @@ class ActividadController extends Controller
         $this->authorize('esAdministrador');
 
         $validated = $request->validate([
-            'id' => 'required|integer|exists:actividades,id',
+            'id' => 'required|integer|exists:actividades,id_actividad',
             'name' => 'required|string|max:60',
-            'categoria_id' => 'required|integer'
+            'id_categoria' => 'required|integer'
         ]);
 
         try {
@@ -83,7 +83,7 @@ class ActividadController extends Controller
 
             $updated = $actividad->update([
                 'name' => $validated['name'],
-                'categoria_id' => $validated['categoria_id']
+                'id_categoria' => $validated['id_categoria']
             ]);
 
             if ($updated) {

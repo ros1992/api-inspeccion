@@ -16,7 +16,7 @@ return new class extends Migration
             // ¡ESTA ES LA LÍNEA MÁGICA!
             // Crea una columna 'id' que es BIGINT, sin signo,
             // autoincremental y la clave primaria.
-            $table->id();
+            $table->id('id_categoria');
 
             // Crea la columna 'nombre' de tipo VARCHAR y se asegura
             // de que no pueda haber dos categorías con el mismo nombre.
