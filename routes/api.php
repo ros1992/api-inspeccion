@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\ActividadController;
+use App\Http\Controllers\EquipoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
@@ -26,5 +27,12 @@ Route::middleware('api')->group(function () {
         Route::post('/', [ActividadController::class, 'index']);
         Route::post('/crear', [ActividadController::class, 'store']);
         Route::post('/actualizar', [ActividadController::class, 'update']);
+    });
+
+    // Equipo routes
+    Route::prefix('equipo')->group(function () {
+        Route::post('/', [EquipoController::class, 'index']);
+        Route::post('/crear', [EquipoController::class, 'store']);
+        Route::post('/actualizar', [EquipoController::class, 'update']);
     });
 });
