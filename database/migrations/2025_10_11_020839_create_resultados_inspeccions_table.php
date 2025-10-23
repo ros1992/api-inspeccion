@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id('id_resultado');
             $table->foreignId('id_inspeccion')->constrained('inspecciones', 'id_inspeccion');
             $table->foreignId('id_actividad')->constrained('actividades', 'id_actividad');
+            $table->enum('dia_semana', ['LUNES', 'MARTES', 'MIERCOLES', 'JUEVES', 'VIERNES', 'SABADO', 'DOMINGO']);
+            $table->enum('turno', ['MAÑANA', 'TARDE']); // B = Bueno, M = Malo
             $table->string('valor_respuesta', 10)->nullable(); // 'B', 'M', o texto
             $table->text('observacion_item')->nullable();
             $table->timestamp('fecha');

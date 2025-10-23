@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\ActividadController;
+use App\Http\Controllers\InspeccionController;
 use App\Http\Controllers\EquipoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -11,8 +12,8 @@ Route::middleware('api')->group(function () {
     Route::prefix('auth')->group(function () {
         Route::post('login', [AuthController::class, 'login']);
         Route::post('register', [AuthController::class, 'register']);
-        Route::post('logout', [AuthController::class, 'logout']);
-        Route::post('me', [AuthController::class, 'me']);
+        //Route::post('logout', [AuthController::class, 'logout']);
+        //Route::post('me', [AuthController::class, 'me']);
     });
 
     // Categorías routes
@@ -34,5 +35,12 @@ Route::middleware('api')->group(function () {
         Route::post('/', [EquipoController::class, 'index']);
         Route::post('/crear', [EquipoController::class, 'store']);
         Route::post('/actualizar', [EquipoController::class, 'update']);
+    });
+
+    // LLenado de formulario
+    Route::prefix('inspeccion')->group(function () {
+        Route::post('/', [InspeccionController::class, 'index']);
+        Route::post('/crear', [InspeccionController::class, 'store']);
+        Route::post('/actualizar', [InspeccionController::class, 'update']);
     });
 });
